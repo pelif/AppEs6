@@ -14,8 +14,11 @@
 
     <body>
 
+    <header><h4>App Lead in Local Storage</h4></header><hr>
+
+    <div>
     <form>
-     <div class="col-md-4">
+        <div class="col-md-4">
       <div class="form-group">
         <label for="nome">Nome</label>
         <input type="text" required class="form-control" name="nome" id="nome">
@@ -32,9 +35,12 @@
         <label for="idade">Idade</label>
         <input type="number" required class="form-control" name="idade" id="idade" min="1" max="99">
       </div>
+      <input type="hidden" id="action">
+      <input type="hidden" id="id_obj">
       <button type="button" id="submit-lead" class="btn btn-primary col-md-12">Salvar</button>
       </div>
   </form><br><br>
+    </div>
 
     <div class="col-md-12">
         <table class="table" id="AppTable"></table>
