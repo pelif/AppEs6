@@ -30,7 +30,6 @@ export function setList(list) {
     $("#AppTable").html(table);
 
     saveListToStorage(list);
-
 }
 
 export function initListStorage() {
