@@ -8,8 +8,7 @@ import { setList,
         updateDados,
         resetForm } from './app.js';
 
-$(function() {
-
+$(document).ready(function() {
     initListStorage();
 
     $("#nome").on("keyup", function() {
@@ -31,8 +30,6 @@ $(function() {
             cpf = $("#cpf").val(),
             idade = $("#idade").val();
 
-        $("#nome, #email, #cpf, #idade").val("");
-
         let obj = {
             "nome": nome,
             "email": email,
@@ -40,13 +37,16 @@ $(function() {
             "idade": idade
         };
 
+        $("#nome, #email, #cpf, #idade").val("");
+        $("#submit-lead").text('Salvar');
+
         if($("#action").prop("value") == 'update') {
             let id_obj = $("#id_obj").val();
             if(id_obj != undefined && id_obj != null) {
-
+                updateDados(id_obj, obj);
+                return;
             }
         }
-
         addToList(obj);
     });
 

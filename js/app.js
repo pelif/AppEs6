@@ -20,7 +20,7 @@ export function setList(list) {
             "<td>"+list[key].cpf+"</td>"+
             "<td>"+list[key].idade+"</td>"+
             "<td>"+
-            "<button type='button' id='edit' class='btn btn-success' index='"+key+"' id='editar'>Editar</button>"+
+            "<button type='button' id='edit' class='btn btn-success' index='"+key+"' id='editar'>Editar</button> "+
             "<button type='button' id='remove' class='btn btn-danger' index='"+key+"' id='excluir'>Excluir</button>"+
             "</td></tr>";
         }
@@ -79,13 +79,8 @@ export function setUpdate(id) {
     $("#action").attr('value', 'update');
 }
 
-export function updateDados(id) {
-    let nome = $("#nome").val();
-    let email = $("#email").val();
-    let cpf = $("#cpf").val();
-    let idade = $("#idade").val();
-
-    list[id] = {"nome": nome, "email": email, "cpf": cpf, "idade": idade};
+export function updateDados(id, obj) {
+    list[id] = { "nome": obj.nome, "email": obj.email, "cpf": obj.cpf, "idade": obj.idade };
     resetForm();
     setList(list);
 }
@@ -95,5 +90,5 @@ export function resetForm() {
     $("#email").attr('value', "");
     $("#cpf").attr('value', "");
     $("#idade").attr('value', "");
-    $("#action").attr('value', "");    
+    $("#action").attr('value', "");
 }
